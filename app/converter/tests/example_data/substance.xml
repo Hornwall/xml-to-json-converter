@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" timestamp="2016-02-22T01:05:02.5966691+01:00" xsi:schemaLocation="http://www.mpa.se/nsl SEnsl-ssi.xsd" xmlns="http://www.mpa.se/nsl">
+  <substance>
+    <common>
+      <substance-classification-cv />
+      <substance-names>
+        <substance-name>
+          <substance-name>zinc trisodium pentetate</substance-name>
+          <substance-name-type-cv term-id="100000123540" term-revision-num="1" term-lang="en" term-english-equiv="Other Name">Substance Name Type CV</substance-name-type-cv>
+          <language-cv>eng</language-cv>
+        </substance-name>
+        <substance-name>
+          <substance-name>zinktrinatriumpentetat</substance-name>
+          <substance-name-type-cv term-id="100000123540" term-revision-num="1" term-lang="en" term-english-equiv="Other Name">Substance Name Type CV</substance-name-type-cv>
+          <language-cv>swe</language-cv>
+        </substance-name>
+        <substance-name>
+          <substance-name>pentetate zinc trisodium</substance-name>
+          <substance-name-type-cv term-id="100000123540" term-revision-num="1" term-lang="en" term-english-equiv="Other Name">Substance Name Type CV</substance-name-type-cv>
+          <language-cv>eng</language-cv>
+        </substance-name>
+        <substance-name>
+          <substance-name>pentetatzinktrinatrium</substance-name>
+          <substance-name-type-cv term-id="100000123540" term-revision-num="1" term-lang="en" term-english-equiv="Other Name">Substance Name Type CV</substance-name-type-cv>
+          <language-cv>swe</language-cv>
+        </substance-name>
+      </substance-names>
+      <substance-codes>
+        <substance-code>
+          <code>11082-38-5</code>
+          <code-system-cv term-id="100000123553" term-revision-num="1" term-lang="en" term-english-equiv="CAS">Code System CV</code-system-cv>
+          <code-system-status-cv term-id="100000123543" term-revision-num="1" term-lang="en" term-english-equiv="Current">Status CV</code-system-status-cv>
+        </substance-code>
+        <substance-code>
+          <code>125833-02-5</code>
+          <code-system-cv term-id="100000123553" term-revision-num="1" term-lang="en" term-english-equiv="CAS">Code System CV</code-system-cv>
+          <code-system-status-cv term-id="100000123545" term-revision-num="1" term-lang="en" term-english-equiv="Alternate">Status CV</code-system-status-cv>
+        </substance-code>
+        <substance-code>
+          <code>415057004</code>
+          <code-system-cv term-id="SNOMEDSNOMED" term-revision-num="1" term-lang="en" term-english-equiv="Snomed">Code System CV</code-system-cv>
+          <code-system-status-cv term-id="100000123543" term-revision-num="1" term-lang="en" term-english-equiv="Current">Status CV</code-system-status-cv>
+        </substance-code>
+        <substance-code>
+          <code>NXU65IC8PG</code>
+          <code-system-cv term-id="100000123577" term-revision-num="1" term-lang="en" term-english-equiv="SRS/UNII">Code System CV</code-system-cv>
+          <code-system-status-cv term-id="100000123543" term-revision-num="1" term-lang="en" term-english-equiv="Current">Status CV</code-system-status-cv>
+        </substance-code>
+        <substance-code>
+          <code>ID101G3QA9IVCOSRV0</code>
+          <code-system-cv term-id="SENSLIDSENSL" term-revision-num="1" term-lang="en" term-english-equiv="Swedish National Drug Substance Registry ID">Code System CV</code-system-cv>
+          <code-system-status-cv term-id="100000123543" term-revision-num="1" term-lang="en" term-english-equiv="Current">Status CV</code-system-status-cv>
+        </substance-code>
+      </substance-codes>
+      <versions>
+        <version>
+          <effective-date>2012-09-25</effective-date>
+        </version>
+      </versions>
+      <reference-information>
+        <substance-classifications>
+          <substance-classification>
+            <substance-classification-cv />
+            <substance-classification-type-cv />
+          </substance-classification>
+        </substance-classifications>
+      </reference-information>
+    </common>
+  </substance>
+</envelope>
