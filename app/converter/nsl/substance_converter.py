@@ -6,6 +6,6 @@ from .substance_codes_converter import SubstanceCodeConverter
 class SubstanceConverter(XmlConverter):
     def convert(self, xml):
         substance = {}
-        substance["substance_names"] = SubstanceNameConverter().convert(xml["substance-names"])
-        substance["substance_codes"] = SubstanceCodeConverter().convert(xml["substance-codes"])
+        substance["substance_names"] = SubstanceNameConverter().convert(xml.common["substance-names"])
+        substance["substance_codes"] = SubstanceCodeConverter().convert(xml.common["substance-codes"])
         return substance

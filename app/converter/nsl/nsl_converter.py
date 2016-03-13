@@ -5,6 +5,6 @@ from .substance_converter import SubstanceConverter
 class NslConverter(XmlConverter):
     def convert(self, xml):
         substances = []
-        for substance in xml.substance.iterchildren():
+        for substance in xml.iterchildren():
             substances.append(SubstanceConverter().convert(substance))
         return substances
