@@ -6,9 +6,9 @@ from .substance_relation_converter import SubstanceRelationConverter
 class SubstanceOtherConverter(XmlConverter):
     def convert(self, xml):
         substance = {}
-        substance["se_nsl_id"] = xml["SeNSLid"]
+        substance["se_nsl_id"] = str(xml["SeNSLid"])
         if hasattr(xml, "NarcoticClass"):
-            substance["narcotic_class"] = xml["NarcoticClass"]
+            substance["narcotic_class"] = int(xml["NarcoticClass"])
         else:
             substance["narcotic_class"] = None
 

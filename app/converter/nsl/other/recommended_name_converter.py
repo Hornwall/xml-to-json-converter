@@ -4,6 +4,6 @@ from ...xml_converter import XmlConverter
 class RecommendedNameConverter(XmlConverter):
     def convert(self, xml):
         name = {}
-        name["name"] = xml["Name"]
-        name["recomended_name_class_lx"] = xml["RecommendedNameClassLx"]
+        name["name"] = str(xml["Name"])
+        name["recomended_name_class_lx"] = str(xml["RecommendedNameClassLx"])
         return name

@@ -7,7 +7,6 @@ class SubstanceCodeConverter(XmlConverter):
         for code in xml.iterchildren():
             item  = {}
             item["code"] = str(code["code"])
-            item["system_cv"] = str(code["code-system-cv"])
-            item["system_status_cv"] = str(code["code-system-status-cv"])
+            item["code_system"] = str(code["code-system-cv"].attrib["term-id"])
             codes.append(item)
         return codes

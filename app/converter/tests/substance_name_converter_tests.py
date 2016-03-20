@@ -11,10 +11,6 @@ class SubstanceNameConverterTests(ConverterTestCase):
 
     def test_substance_name_is_expected_to_have_type_cv(self):
         substance_names = SubstanceNameConverter().convert(self.get_substance_names_xml_object())
-        self.assertTrue("type_cv" in substance_names[0])
-
-    def test_substance_name_is_expected_to_have_type_cv(self):
-        substance_names = SubstanceNameConverter().convert(self.get_substance_names_xml_object())
         self.assertTrue("language_cv" in substance_names[0])
 
     def test_substance_has_two_names(self):
