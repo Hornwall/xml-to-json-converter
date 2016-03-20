@@ -6,9 +6,13 @@ from lxml import objectify, etree
 class SubstanceConverterTests(ConverterTestCase):
 
     def test_substance_is_expected_to_have_substance_names(self):
-        substance = SubstanceConverter().convert(self.xml_obj.substance)
-        self.assertTrue("substance_names" in substance)
+        self.assertTrue("substance_names" in self.get_substance())
 
     def test_substance_is_expected_to_have_substance_codes(self):
-        substance = SubstanceConverter().convert(self.xml_obj.substance)
-        self.assertTrue("substance_codes" in substance)
+        self.assertTrue("substance_codes" in self.get_substance())
+    
+    def test_substance_is_expected_to_have_version(self):
+        self.assertTrue("version" in self.get_substance())
+
+    def get_substance(self):
+        return SubstanceConverter().convert(self.nsl_xml_obj.substance)

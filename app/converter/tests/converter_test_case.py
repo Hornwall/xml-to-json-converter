@@ -5,14 +5,20 @@ from ..nsl.nsl_converter import NslConverter
 
 class ConverterTestCase(unittest.TestCase):
     example_path = os.path.dirname(os.path.abspath(__file__)) + "/example_data/"
-    xml_obj = ""
+    nsl_xml_obj = ""
+    nsl_other_xml_obj = ""
 
     def setUp(self):
-        xml_file = open(self.example_path + "substance.xml")
+        self.nsl_xml_obj = self.__load_xml("substance.xml")
+        self.nsl_other_xml_obj = self.__load_xml("substance_other.xml")
+        pass
+
+    def __load_xml(self, input_file):
+        xml_file = open(self.example_path + input_file)
         xml_data = xml_file.read()
         xml_file.close()
-        self.xml_obj = objectify.fromstring(xml_data)
-        pass
+        return objectify.fromstring(xml_data)
+
 
     def _convert_substance(self):
         return NslConverter().convert(self.xml_obj)

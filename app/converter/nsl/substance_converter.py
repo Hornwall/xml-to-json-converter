@@ -8,4 +8,5 @@ class SubstanceConverter(XmlConverter):
         substance = {}
         substance["substance_names"] = SubstanceNameConverter().convert(xml.common["substance-names"])
         substance["substance_codes"] = SubstanceCodeConverter().convert(xml.common["substance-codes"])
+        substance["version"] = self.convert_to_iso_date(str(xml.common.versions.version["effective-date"]))
         return substance

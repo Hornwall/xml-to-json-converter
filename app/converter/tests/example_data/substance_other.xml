@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" timestamp="2016-02-22T01:07:02.185953+01:00" xsi:schemaLocation="http://www.mpa.se/nsl SEnsl-other.xsd" xmlns="http://www.mpa.se/nsl">
+  <NSL_Substance>
+    <SeNSLid>ID101G3QA9IVCOSRV0</SeNSLid>
+    <RecommendedName>
+      <Name>zinktrinatriumpentetat</Name>
+      <RecommendedNameClassLx>rec</RecommendedNameClassLx>
+    </RecommendedName>
+    <NarcoticClass>0</NarcoticClass>
+    <SubstanceSubstanceRelation>
+      <RelatedSeNSLid>IDE4POBWU93AMVERT1</RelatedSeNSLid>
+      <SubstSubstRelationLx>PARENT</SubstSubstRelationLx>
+    </SubstanceSubstanceRelation>
+    <SubstanceSubstanceRelation>
+      <RelatedSeNSLid>IDE4POBWU93AMVERT1</RelatedSeNSLid>
+      <SubstSubstRelationLx>PARENT</SubstSubstRelationLx>
+    </SubstanceSubstanceRelation>
+  </NSL_Substance>
+</envelope>

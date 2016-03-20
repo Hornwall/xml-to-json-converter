@@ -5,4 +5,4 @@ from lxml import objectify, etree
 
 class NslConverterTests(ConverterTestCase):
     def test_returns_one_substance(self):
-        self.assertEqual(len(NslConverter().convert(self.xml_obj)), 1)
+        self.assertEqual(len(NslConverter().convert(self.nsl_xml_obj)), 1)

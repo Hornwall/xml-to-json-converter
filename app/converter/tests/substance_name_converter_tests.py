@@ -22,5 +22,5 @@ class SubstanceNameConverterTests(ConverterTestCase):
         self.assertEqual(len(substance_names), 4)
 
     def get_substance_names_xml_object(self):
-        return self.xml_obj.substance.common["substance-names"]
+        return self.nsl_xml_obj.substance.common["substance-names"]
 

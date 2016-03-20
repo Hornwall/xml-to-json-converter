@@ -22,4 +22,4 @@ class SubstanceCodesConverterTests(ConverterTestCase):
         self.assertEqual(len(substance_codes), 5)
 
     def get_substance_codes_xml_object(self):
-        return self.xml_obj.substance.common["substance-codes"]
+        return self.nsl_xml_obj.substance.common["substance-codes"]
