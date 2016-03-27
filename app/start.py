@@ -24,8 +24,8 @@ for item in nsl_dict:
             break
 
     with open('json/' + filename + ".json", 'w') as outfile:
-        json.dump(item, outfile)
+        json.dump(item, outfile, sort_keys=True)
 
 for item in nsl_other_dict:
     with open("json/other/" + item["se_nsl_id"] + ".json", "w") as outfile:
-        json.dump(item, outfile)
+        json.dump(item, outfile, sort_keys=True)
