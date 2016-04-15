@@ -1,11 +1,14 @@
 import os
 import zipfile
 import sys
-import simplejson as json
 
 from lxml import objectify, etree
 from converter.nsl.nsl_converter import NslConverter
 from converter.nsl.other.nsl_other_converter import NslOtherConverter
+
+import json_encoder
+import config
+import file_utils
 
 
 
@@ -31,29 +34,14 @@ def convert_nsl(input_dir, output_dir):
                 filename = code["code"]
                 break
 
-        with open(output_dir + filename + ".json", 'w') as outfile:
-            json.dump(item, outfile, sort_keys=True)
+        json_encoder.dump_json(item, filename + ".json")
 
     for item in nsl_other_dict:
-        with open(output_dir + item["se_nsl_id"] + "_other.json", "w") as outfile:
-            json.dump(item, outfile, sort_keys=True)
+        json_encoder.dump_json(item, item["se_nsl_id"] + "_other.json")
 
-def cleanup(directory):
-    for root, dirs, files in os.walk(directory, topdown=False):
-        for name in files:
-            os.remove(os.path.join(root, name))
-        for name in dirs:
-            os.rmdir(os.path.join(root, name))
-    os.rmdir(directory)
 
-def zipdir(path, zip_file):
-    for root, dirs, files in os.walk(path):
-        for file in files:
-            zip_file.write(os.path.join(root, file), file)
 
 if __name__ == '__main__':
     convert_nsl("", "json/")
-    zipf = zipfile.ZipFile('nsl.zip', 'w', zipfile.ZIP_DEFLATED)
-    zipdir('json/', zipf)
-    zipf.close()
-    cleanup("json/")
+    file_utils.zipdir(config.NSL_JSON_OUTPUT_PATH, "nsl.zip")
+    file_utils.cleanup(config.NSL_JSON_OUTPUT_PATH)
