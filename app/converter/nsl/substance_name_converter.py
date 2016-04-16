@@ -9,4 +9,4 @@ class SubstanceNameConverter(XmlConverter):
             item["name"] = name["substance-name"].text
             item["language_cv"] = name["language-cv"].text
             names.append(item)
-        return names
+        return sorted(names, key=lambda name: name["name"])
