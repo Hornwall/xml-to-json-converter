@@ -9,4 +9,4 @@ class SubstanceCodeConverter(XmlConverter):
             item["code"] = str(code["code"])
             item["code_system"] = str(code["code-system-cv"].attrib["term-id"])
             codes.append(item)
-        return sorted(codes, key=lambda code: code["code_system"])
+        return sorted(codes, key=lambda code: code["code"])
