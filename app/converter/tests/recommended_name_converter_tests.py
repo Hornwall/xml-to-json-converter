@@ -7,7 +7,7 @@ class RecommendedNameConverterTests(ConverterTestCase):
         self.assertTrue("name" in self.get_name())
 
     def test_recommended_name_is_expected_to_have_recommended_name_class_lx(self):
-        self.assertTrue("recomended_name_class_lx" in self.get_name())
+        self.assertTrue("recommended_name_class_lx" in self.get_name())
 
     def get_name(self):
         return RecommendedNameConverter().convert(self.nsl_other_xml_obj["NSL_Substance"]["RecommendedName"])
