@@ -13,6 +13,10 @@ class SubstanceCodesConverterTests(ConverterTestCase):
         substance_codes = SubstanceCodeConverter().convert(self.get_substance_codes_xml_object())
         self.assertTrue("code_system_cv" in substance_codes[0])
 
+    def test_substance_name_is_expected_to_have_type_cv(self):
+        substance_codes = SubstanceCodeConverter().convert(self.get_substance_codes_xml_object())
+        self.assertTrue("code_system_status_cv" in substance_codes[0])
+
     def test_substance_has_five_codes(self):
         substance_codes = SubstanceCodeConverter().convert(self.get_substance_codes_xml_object())
         self.assertEqual(len(substance_codes), 5)

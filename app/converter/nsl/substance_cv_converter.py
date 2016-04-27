@@ -2,7 +2,7 @@ from lxml import objectify, etree
 from operator import itemgetter
 from ..xml_converter import XmlConverter
 
-class SubstanceCodeSystemConverter(XmlConverter):
+class SubstanceCVConverter(XmlConverter):
     def convert(self, xml):
         item  = {}
         item["term_english_equiv"] = str(xml.attrib["term-english-equiv"])
