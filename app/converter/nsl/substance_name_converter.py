@@ -12,4 +12,8 @@ class SubstanceNameConverter(XmlConverter):
             item["language_cv"] = name["language-cv"].text
             item["substance_name_type_cv"] = SubstanceCVConverter().convert(name["substance-name-type-cv"])
             names.append(item)
-        return sorted(names, key = itemgetter("name", "language_cv"))
+        return sorted(names, key = lambda k: (
+            k["name"],
+            k["language_cv"],
+            self.hash_dict(k["substance_name_type_cv"])
+            ))

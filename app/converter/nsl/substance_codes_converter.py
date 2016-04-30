@@ -12,4 +12,8 @@ class SubstanceCodeConverter(XmlConverter):
             item["code_system_cv"] = SubstanceCVConverter().convert(code["code-system-cv"])
             item["code_system_status_cv"] = SubstanceCVConverter().convert(code["code-system-status-cv"])
             codes.append(item)
-        return sorted(codes, key = itemgetter("code"))
+        return sorted(codes, key = lambda k: (
+            k["code"], 
+            self.hash_dict(k["code_system_cv"]), 
+            self.hash_dict(k["code_system_cv"])
+            ))

@@ -7,6 +7,7 @@ import zipfile
 
 from lxml import objectify, etree
 from converter.nsl.nsl_converter import NslConverter
+from converter.nsl.nsl_dictionary_converter import NslDictionaryConverter
 from converter.nsl.other.nsl_other_converter import NslOtherConverter
 
 def ingest():
@@ -22,6 +23,7 @@ def ingest():
 
     dump_nsl(nsl_dict)
     dump_nsl_other(nsl_other_dict)
+    dump_dictionaries()
 
     file_utils.cleanup(config.NSL_DOWNLOAD_LOCATION)
     file_utils.zipdir(config.NSL_JSON_OUTPUT_PATH, config.NSL_ARCHIVE_NAME)
@@ -33,7 +35,7 @@ def dump_nsl(nsl_dict):
     for item in nsl_dict:
         filename = ""
         for code in item["substance_codes"]:
-            if code["code_system"] == "SENSLIDSENSL":
+            if code["code_system_cv"]["term_id"] == "SENSLIDSENSL":
                 filename = code["code"]
                 break
 
@@ -43,10 +45,17 @@ def dump_nsl_other(nsl_other_dict):
     for item in nsl_other_dict:
         json_encoder.dump_json(item, item["se_nsl_id"] + "_other.json")
 
+def dump_dictionaries():
+    dictionaries = config.NSL_DICTIONARIES_TO_CONVERT;
+
+    for dictionary in dictionaries:
+        dict_obj = open_and_objectify(os.path.join(config.NSL_DOWNLOAD_LOCATION, dictionary + ".xsd"))
+        json_encoder.dump_json(NslDictionaryConverter().convert(dict_obj), dictionary + ".json")
+
 
 def open_and_objectify(path):
     print("objectifying: {path}".format(**locals()))
     xml = open(path)
-    xml_string = xml.read()
+    xml_string = xml.read().encode("UTF-8")
     return objectify.fromstring(xml_string)
 
