@@ -12,4 +12,4 @@ class SubstanceCodeConverter(XmlConverter):
             item["code_system_cv"] = SubstanceCVConverter().convert(code["code-system-cv"])
             item["code_system_status_cv"] = SubstanceCVConverter().convert(code["code-system-status-cv"])
             codes.append(item)
-        return sorted(codes, key = itemgetter("code", "code_system_cv"))
+        return sorted(codes, key = itemgetter("code", "code_system_cv", "code_system_status_cv"))
