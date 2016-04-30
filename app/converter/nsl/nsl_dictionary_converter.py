@@ -1,4 +1,5 @@
 from lxml import objectify, etree
+from operator import itemgetter
 from ..xml_converter import XmlConverter
 
 class NslDictionaryConverter(XmlConverter):
@@ -27,4 +28,4 @@ class NslDictionaryConverter(XmlConverter):
             entry["lang"] = doc.attrib["{http://www.w3.org/XML/1998/namespace}lang"]
             entry["value"] = doc.text
             documentation.append(entry)
-        return documentation
+        return sorted(documentation, key = itemgetter("lang", "value"))
