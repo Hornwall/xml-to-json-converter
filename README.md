@@ -2,7 +2,7 @@
 # XML to Json converter
 The goal of this project is to create a small tool that can convert predefined data sources that are delivered in an XML-format and convert these to a JSON format for later use with the JSON diff api (link) for later comparison. 
 ## How to run
-python3 start.py
+`python3 start.py`
 ## Improvements
 ### Command line arguments.
 One of the requirements on this tool was that it could be used as a scheduled task to read and convert multiple data sources that are released at different intervals and times. As of now the tool only reads and converts NSL but more data sources could be added at a later date. This would require the app to be able to take which data source to read as a command line argument. Suggested operation:
