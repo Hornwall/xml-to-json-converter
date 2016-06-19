@@ -13,3 +13,6 @@ One of the requirements on this tool was that it could be used as a scheduled ta
 This project currently depends on [simplejson](https://pypi.python.org/pypi/simplejson/) for JSON encoding. This should probably be replaced with the JSON library from the python standard library to minimize the dependencies on external libraries. 
 
 
+## Related projects
+* [JSON diff API](https://github.com/c0d3m0nkey/json-diff-api)
+* [JSON diff frontend](https://github.com/c0d3m0nkey/json-diff-frontend)
